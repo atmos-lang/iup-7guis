@@ -21,15 +21,9 @@ val dlg = iup.dialog @{iup.hbox @{txt_count, btn_count, ngap = "10"}, title = "C
 
 dlg::showxy( iup.CENTER, iup.CENTER )
 
-```
-local timer = iup.timer{time=500}
-local opts = { clock=false }
-function timer:action_cb()
-    env_sok.step(opts)
-end
-timer.run = "YES"
-```
-
+set env_iup.env.idle = \{
+    env_sok.step @{ clock=false, ms=0 }
+}
 ;;;
 val opts = @{ clock=false }
 iup.SetIdle <- \{
