@@ -25,9 +25,8 @@ set env_iup.env.idle = \{
     env_sok.step @{ clock=false, ms=0 }
 }
 ;;;
-val opts = @{ clock=false }
 iup.SetIdle <- \{
-    env_sok.step(opts)
+    env_sok.step @{ clock=false, ms=0 }
 }
 ;;;
 
